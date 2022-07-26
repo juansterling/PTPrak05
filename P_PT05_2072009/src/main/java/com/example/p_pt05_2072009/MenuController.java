@@ -98,7 +98,7 @@ public class MenuController {
         this.namamenu.clear();
         this.harga.clear();
         this.desc.clear();
-        this.isicategory.getSelectionModel().select(-1);
+        this.isicategory.getSelectionModel().select(null);
     }
 
 
