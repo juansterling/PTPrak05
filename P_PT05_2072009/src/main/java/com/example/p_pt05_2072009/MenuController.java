@@ -115,6 +115,7 @@ public class MenuController {
     public void dataterpilih() {
         this.btnUpdate.setDisable(false);
         this.btnDelete.setDisable(false);
+        this.btnSave.setDisable(true);
         tabelmenu.getSelectionModel().getSelectedItems();
         listmenu2 = tabelmenu.getSelectionModel().getSelectedItems();
         idmenu.setText(String.valueOf(tabelmenu.getSelectionModel().getSelectedItem().getId()));
