@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="baseLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.p_pt05_2072009.MenuController">
+    <left>
+        <VBox prefHeight="400.0" prefWidth="274.0" BorderPane.alignment="CENTER">
+            <children>
+                <GridPane prefHeight="202.0" prefWidth="274.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.39996337890625" minWidth="10.0" prefWidth="113.6000244140625" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.5999755859375" minWidth="10.0" prefWidth="161.5999755859375" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="40.4" minHeight="10.0" prefHeight="27.59997978210449" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="53.200020217895506" minHeight="10.0" prefHeight="31.599993896484378" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="65.60000000000001" minHeight="10.0" prefHeight="34.00000610351562" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="140.80001220703124" minHeight="10.0" prefHeight="80.20000610351562" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="109.60000000000002" minHeight="0.0" prefHeight="36.600006103515625" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="ID">
+                            <GridPane.margin>
+                                <Insets left="10.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <Label text="Name" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="10.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <Label text="Price" GridPane.rowIndex="2">
+                            <GridPane.margin>
+                                <Insets left="10.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <Label text="Description" GridPane.rowIndex="3">
+                            <GridPane.margin>
+                                <Insets left="10.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <Label text="Category" GridPane.rowIndex="4">
+                            <GridPane.margin>
+                                <Insets left="10.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="idmenu" GridPane.columnIndex="1" />
+                        <TextField fx:id="namamenu" prefHeight="31.0" prefWidth="161.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="harga" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextArea fx:id="desc" prefHeight="59.0" prefWidth="138.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="isicategory" onMouseClicked="#klikcategory" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                    </children>
+                </GridPane>
+                <HBox prefHeight="28.0" prefWidth="274.0" spacing="10.0">
+                    <children>
+                        <Button fx:id="btnSave" mnemonicParsing="false" onAction="#savebtn" text="Save" />
+                        <Button fx:id="btnReset" mnemonicParsing="false" onAction="#resetbtn" text="Reset" />
+                        <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#updatebtn" text="Update" />
+                        <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deletebtn" text="Delete" />
+                    </children>
+                    <VBox.margin>
+                        <Insets left="10.0" />
+                    </VBox.margin>
+                </HBox>
+            </children>
+        </VBox>
+    </left>
+    <right>
+        <VBox prefHeight="400.0" prefWidth="419.0" BorderPane.alignment="CENTER">
+            <children>
+                <TableView fx:id="tabelmenu" onMouseClicked="#dataterpilih" prefHeight="380.0" prefWidth="386.0">
+                    <columns>
+                        <TableColumn fx:id="colid" prefWidth="79.20001065731049" text="ID" />
+                        <TableColumn fx:id="colnama" prefWidth="82.40003204345703" text="Name" />
+                        <TableColumn fx:id="colharga" prefWidth="91.199951171875" text="Price" />
+                        <TableColumn fx:id="colcategory" prefWidth="120.80001831054688" text="Category" />
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </right>
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="showcat" mnemonicParsing="false" onAction="#showcat" text="Show Category Management" />
+                        <MenuItem fx:id="close" mnemonicParsing="false" onAction="#close" text="Close " />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem fx:id="about" mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+</BorderPane>
