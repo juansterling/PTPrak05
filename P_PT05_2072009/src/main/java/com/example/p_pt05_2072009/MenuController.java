@@ -122,7 +122,7 @@ public class MenuController {
         harga.setText(String.valueOf(tabelmenu.getSelectionModel().getSelectedItem().getPrice()));
         desc.setText(tabelmenu.getSelectionModel().getSelectedItem().getDescription());
         isicategory.setValue(tabelmenu.getSelectionModel().getSelectedItem().getCategory());
-
+        idmenu.setDisable(true);
     }
     public void deletebtn(ActionEvent actionEvent) {
         MenuDao dao = new MenuDao();
